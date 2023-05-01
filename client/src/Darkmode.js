@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, } from "react";
 import { BsMoon } from "react-icons/bs";
 import "./darkMode.css";
+import { Button } from "react-bootstrap/";
+
 
 function Darkmode() {
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
@@ -17,11 +19,11 @@ function Darkmode() {
   }, [theme]);
   return (
     <div className={`Darkmode ${theme}`}>
-      <button onClick={toggleTheme} style={{backgroundColor:"white", border:"none" ,color:"black",fontSize:20}}>
+      <Button onClick={toggleTheme} variant="outline-dark" style={{border:"none"}}>
         <BsMoon />
         <span> </span>
         <span style={{ fontWeight: "bold", fontSize: 17 }}> Dark Mode</span>
-      </button>
+      </Button>
     </div>
   );
 }

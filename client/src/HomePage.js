@@ -11,15 +11,18 @@ import {
 } from "react-bootstrap/";
 import Header from "./Header";
 import { Link } from "react-router-dom";
+// /////////////////////
+
 
 function HomePage(props) {
   const data = props.data;
+// ///////////////////
 
   return (
     <>
       <Header />
-      <div className="border ">
-        <Container>
+      <div>
+        <Container >
           {/* //////////////////////////////////////////////////////////////////// */}
           <Row style={{ margin: 20, marginTop: "5rem" }}>
             <Col>
