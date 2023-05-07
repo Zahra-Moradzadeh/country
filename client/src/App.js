@@ -1,13 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import HomePage from "./HomePage";
-import Germany from "./Germany";
-import USA from "./USA";
-import Brazil from "./Brazil";
-import Iceland from "./Iceland";
-import Afghanistan from "./Afghanistan";
-import Aland from "./Aland";
-import Albania from "./Albania";
-import Algeria from "./Algeria";
+import Template from "./Template";
 
 
 
@@ -573,14 +566,15 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<HomePage data={data} />} />
-        <Route path="Germany" element={<Germany data={data}/>} />
-        <Route path="USA" element={<USA data={data}/>} />
-        <Route path="Brazil" element={<Brazil data={data}/>} />
-        <Route path="IceLand" element={<Iceland data={data}/>} />
-        <Route path="Afghanistan" element={<Afghanistan data={data}/>} />
-        <Route path="Aland" element={<Aland data={data}/>} />
-        <Route path="Albania" element={<Albania data={data}/>} />
-        <Route path="Algeria" element={<Algeria data={data}/>} />
+        <Route path="Germany" element={<Template info={data} Country="german"/>} />
+        <Route path="USA" element={<Template info={data} Country="usa"/>} />
+        <Route path="Brazil" element={<Template info={data} Country="brazil"/>} />
+        <Route path="IceLand" element={<Template info={data} Country="iceland"/>} />
+        <Route path="Afghanistan" element={<Template info={data} Country="afghanistan"/>} />
+        <Route path="Aland" element={<Template info={data} Country="aland"/>} />
+        <Route path="Albania" element={<Template info={data} Country="albania"/>} />
+        <Route path="Algeria" element={<Template info={data} Country="algeria"/>} />
+        
       </Routes>
     </>
   );

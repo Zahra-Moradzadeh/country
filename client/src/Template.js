@@ -1,54 +1,57 @@
 import Header from "./Header";
 import Back from "./Back";
-import { Container, Row, Col, Button, Figure } from "react-bootstrap/";
+import { Container, Row, Col, Figure, Button } from "react-bootstrap/";
 
-function Germany(props) {
-  const data = props.data;
+function Template(props) {
+  console.log(props);
+  const data = props.info;
+  const country = props.Country;
+  //   console.log(data);
+  //   console.log(country);
+  //   console.log(data[country])
   return (
     <>
       <Header />
       <Container>
         {/* ////////////////////// BACK //////////////////// */}
         <Row style={{ marginTop: 20, marginBottom: 20 }}>
-          <Col>
-            {<Back />}
-          </Col>
+          <Col>{<Back />}</Col>
         </Row>
         {/* /////////////////////// IMAGE And INFO //////////////////// */}
         <Row>
           <Col md={12} lg={6}>
-            <Figure.Image src={data.german.flag} />
+            <Figure.Image src={data[country].flag} />
           </Col>
           <Col style={{ margin: 30 }}>
             <Row>
-              <h1>{data.german.name}</h1>
+              <h1>{data[country].name}</h1>
               <Col>
                 <section style={{ margin: 5 }}>
-                  <b>Native Name :</b> {data.german.nativeName}
+                  <b>Native Name :</b> {data[country].nativeName}
                 </section>
                 <section style={{ margin: 5 }}>
-                  <b>Population :</b> {data.german.population}
+                  <b>Population :</b> {data[country].population}
                 </section>
                 <section style={{ margin: 5 }}>
-                  <b>Region :</b> {data.german.region}
+                  <b>Region :</b> {data[country].region}
                 </section>
 
                 <section style={{ margin: 5 }}>
-                  <b>Sub Region :</b> {data.german.subregion}
+                  <b>Sub Region :</b> {data[country].subregion}
                 </section>
               </Col>
               <Col>
                 <section style={{ margin: 5 }}>
-                  <b>Capital :</b> {data.german.capital}
+                  <b>Capital :</b> {data[country].capital}
                 </section>
                 <section style={{ margin: 5 }}>
-                  <b>Top Level Domain :</b> {data.german.topLevelDomain}
+                  <b>Top Level Domain :</b> {data[country].topLevelDomain}
                 </section>
                 <section style={{ margin: 5 }}>
-                  <b>Currency :</b> {data.german.currencies[0].name}
+                  <b>Currency :</b> {data[country].currencies[0].name}
                 </section>
                 <section style={{ margin: 5 }}>
-                  <b>Languages :</b> {data.german.languages[0].name}
+                  <b>Languages :</b> {data[country].languages[0].name}
                 </section>
               </Col>
             </Row>
@@ -57,12 +60,14 @@ function Germany(props) {
                 <b>Border Countries : </b>
               </section>
               <section style={{ margin: 5 }}>
-                {data.german.borders.map((name) => (
+                {data[country].borders ? data[country].borders.map((name) => (
                   <>
-                    <Button variant="outline-secondary" style={{margin:2}}>{name}</Button>
+                    <Button variant="outline-secondary" style={{ margin: 2 }}>
+                      {name}
+                    </Button>
                     <span> </span>
                   </>
-                ))}
+                )):"----"}
               </section>
             </Row>
           </Col>
@@ -71,4 +76,4 @@ function Germany(props) {
     </>
   );
 }
-export default Germany;
+export default Template;

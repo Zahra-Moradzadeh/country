@@ -226,6 +226,7 @@ function HomePage(props) {
                 </Card.Body>
               </Card>
             </Col>
+
           </Row>
         </Container>
       </div>
